@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Robotisâmes - Smart Car 4WD (RA-KS-025):  Fichier source de RaSmartCar4WD.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Robotisâmes - Smart Car 4WD (RA-KS-025)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RaSmartCar4WD.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;Servo.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;RaKsRemoteControl.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;LedMatrixAiP1640.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SR04.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// LED</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define PIN_LED 9</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Servo</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define PIN_SERVO A3 </span><span class="comment">//servo Pin</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// Line Tracking</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define PIN_TRACKING_LEFT 11</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define PIN_TRACKING_MIDDLE 7</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define PIN_TRACKING_RIGHT 8</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// HC-SR04</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define PIN_TRIGGER 12  </span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define PIN_ECHO 13</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Remote Controle</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define PIN_IR_RECEIVER 3</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Motors</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define PIN_MOTOR_L_CTRL 4     </span><span class="comment">// define the direction control pin of B motor</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define PIN_MOTOR_L_PWM 5   </span><span class="comment">//define the PWM control pin of B motor</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define PIN_MOTOR_R_CTRL 2    </span><span class="comment">//define direction control pin of A motor</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define PIN_MOTOR_R_PWM 6   </span><span class="comment">//define the PWM control pin of A motor</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// LED Matrix</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define PIN_MATRIX_CLOCK A5</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define PIN_MATRIX_DATA A4</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define DIST_UNIT_CM 0</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define DIST_UNIT_INCH 1</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define SPEED_MAX 255</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define SPEED_STEP 10</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define BT_MODE_RUN 1</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define BT_MODE_ANTI_DROP 2</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define BT_MODE_LINE_TRACKING 3</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define BT_MODE_AVOID 4</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define BT_MODE_FOLLOWING 5</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classRaSmartCar4WD.html">   47</a></span><span class="keyword">class </span><a class="code hl_class" href="classRaSmartCar4WD.html">RaSmartCar4WD</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">bool</span> debug;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">int</span> distanceUnit;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">int</span> speed;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  Servo servoHead;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  RaKsRemoteControl* rcHandler;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  LedMatrixAiP1640* ledMatrix;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  SR04* distSensor;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">bool</span> showSymbols;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">int</span> btMode;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_function" href="classRaSmartCar4WD.html#ad1239424a6bc168d836880fee7f2a917">RaSmartCar4WD</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">// Init</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a533abe0ff1a9460408f9b2c6e3955207">init</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// Debug</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#ace7b48eff38d0562f298c7f621ba62ef">setDebug</a>(<span class="keywordtype">bool</span> dbg);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">// Servo</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a5e2d1b2d27ff368778646f280cbeb0cb">setServoAnglePWM</a>(<span class="keywordtype">int</span> iAngle);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a3aeaa38843f6327950a1828bb525d7f6">setServoAngle</a>(<span class="keywordtype">int</span> iAngle);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// LED</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a16c588d4f331659f5ac43369a35f47ae">switchLed</a>(<span class="keywordtype">bool</span> status);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a60a48cfaf50a207d341459d6ed8280a9">blinkLed</a>(<span class="keywordtype">int</span> iDelay);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#aba2959037c1318dd4c950b510eecaf34">breathLed</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">// Tracking sensor</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a2b4f761030958d7ce5ef8af62f957e81">getLeftTrack</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a823ef9bf9b7ea016f7ba9f000c055e15">getMiddleTrack</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a204a4ce159080511d225b2392ec15ed8">getRightTrack</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a33918d23a85ce6a6636bfc36351bf2b2">checkTrack</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="comment">// Servo</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#ade0199d73c39615c71779ade26fd2826">calibrateServo</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">// Ultrasonic sensor</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#adc0aa82d32398523deca70edd5c7e0ee">setDistanceUnit</a>(<span class="keywordtype">int</span> unit);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">float</span> getDistance();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> enableFollowMovingObjects();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> enableAvoidObstacles();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="comment">// IR Remote Control</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> checkRemoteControl();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> handleRemoteControl();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">// Bluetooth</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordtype">void</span> debugBluetooth();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">void</span> enableBluetoothControl();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="comment">// Wheels control</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a1a47d0a16ab360481eb92cd66d3b3b4d">setSpeed</a>(<span class="keywordtype">int</span> iSpeed);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a211286b9fe824b5deae2204bcacde643">goForward</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a211286b9fe824b5deae2204bcacde643">goForward</a>(<span class="keywordtype">int</span> iSpeed);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a1266e0f33776fb5675f8aaa8695f6a25">goBackward</a>();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a1266e0f33776fb5675f8aaa8695f6a25">goBackward</a>(<span class="keywordtype">int</span> iSpeed);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a94b0f7c79fbe5549c1faea3ba6e0f05d">turnLeft</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a94b0f7c79fbe5549c1faea3ba6e0f05d">turnLeft</a>(<span class="keywordtype">int</span> iSpeed);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a920e44e1fbd7e64d28dde4b272467117">turnRight</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#a920e44e1fbd7e64d28dde4b272467117">turnRight</a>(<span class="keywordtype">int</span> iSpeed);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRaSmartCar4WD.html#ad8a550f53ac0b02d6c3d6e6b1db27f04">stop</a>();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="comment">// LED Matrix</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordtype">void</span> setShowSymbols(<span class="keywordtype">bool</span> iShow);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">void</span> display(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> entries[]);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">void</span> displaySmile();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> displayLeft();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> displayRight();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordtype">void</span> displayStart();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordtype">void</span> displayForward();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> displayBackward();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">void</span> displayStop();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> clearDisplay();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="comment">// Line tracking</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">void</span> enableLineTracking();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>};</div>
+<div class="ttc" id="aclassRaSmartCar4WD_html"><div class="ttname"><a href="classRaSmartCar4WD.html">RaSmartCar4WD</a></div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.h:48</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a1266e0f33776fb5675f8aaa8695f6a25"><div class="ttname"><a href="classRaSmartCar4WD.html#a1266e0f33776fb5675f8aaa8695f6a25">RaSmartCar4WD::goBackward</a></div><div class="ttdeci">void goBackward()</div><div class="ttdoc">Actionne les moteurs pour faire reculer la voiture. Utilisez la méthode setSpeed pour régler la vites...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:159</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a16c588d4f331659f5ac43369a35f47ae"><div class="ttname"><a href="classRaSmartCar4WD.html#a16c588d4f331659f5ac43369a35f47ae">RaSmartCar4WD::switchLed</a></div><div class="ttdeci">void switchLed(bool status)</div><div class="ttdoc">Allume ou éteint la LED de test (voir la définition du PIN_LED). Le branchement de la LED sert à test...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:309</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a1a47d0a16ab360481eb92cd66d3b3b4d"><div class="ttname"><a href="classRaSmartCar4WD.html#a1a47d0a16ab360481eb92cd66d3b3b4d">RaSmartCar4WD::setSpeed</a></div><div class="ttdeci">void setSpeed(int iSpeed)</div><div class="ttdoc">Définit la vitesse (entre 0 et 255) des moteurs à courant continu de la voiture.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:100</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a204a4ce159080511d225b2392ec15ed8"><div class="ttname"><a href="classRaSmartCar4WD.html#a204a4ce159080511d225b2392ec15ed8">RaSmartCar4WD::getRightTrack</a></div><div class="ttdeci">int getRightTrack()</div><div class="ttdoc">Récupère la valeur du capteur de droite de suivi de ligne.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:380</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a211286b9fe824b5deae2204bcacde643"><div class="ttname"><a href="classRaSmartCar4WD.html#a211286b9fe824b5deae2204bcacde643">RaSmartCar4WD::goForward</a></div><div class="ttdeci">void goForward()</div><div class="ttdoc">Actionne les moteurs pour faire avancer la voiture droit devant. Utilisez la méthode setSpeed pour ré...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:118</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a2b4f761030958d7ce5ef8af62f957e81"><div class="ttname"><a href="classRaSmartCar4WD.html#a2b4f761030958d7ce5ef8af62f957e81">RaSmartCar4WD::getLeftTrack</a></div><div class="ttdeci">int getLeftTrack()</div><div class="ttdoc">Récupère la valeur du capteur de gauche de suivi de ligne.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:360</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a33918d23a85ce6a6636bfc36351bf2b2"><div class="ttname"><a href="classRaSmartCar4WD.html#a33918d23a85ce6a6636bfc36351bf2b2">RaSmartCar4WD::checkTrack</a></div><div class="ttdeci">void checkTrack()</div><div class="ttdoc">Affiche l'état des 3 capteurs de suivi de ligne dans la console (moniteur).</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:388</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a3aeaa38843f6327950a1828bb525d7f6"><div class="ttname"><a href="classRaSmartCar4WD.html#a3aeaa38843f6327950a1828bb525d7f6">RaSmartCar4WD::setServoAngle</a></div><div class="ttdeci">void setServoAngle(int iAngle)</div><div class="ttdoc">Définit l'angle (entre 0 et 180°) du servomoteur de la tête de la voiture.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:90</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a533abe0ff1a9460408f9b2c6e3955207"><div class="ttname"><a href="classRaSmartCar4WD.html#a533abe0ff1a9460408f9b2c6e3955207">RaSmartCar4WD::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">l'objet de gestion de la Smart Car. A noter que par défaut :</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:24</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a5e2d1b2d27ff368778646f280cbeb0cb"><div class="ttname"><a href="classRaSmartCar4WD.html#a5e2d1b2d27ff368778646f280cbeb0cb">RaSmartCar4WD::setServoAnglePWM</a></div><div class="ttdeci">void setServoAnglePWM(int iAngle)</div><div class="ttdoc">Définit l'angle (entre 0 et 180°) du servomoteur de la tête de la voiture. Cette méthode utilise de f...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:75</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a60a48cfaf50a207d341459d6ed8280a9"><div class="ttname"><a href="classRaSmartCar4WD.html#a60a48cfaf50a207d341459d6ed8280a9">RaSmartCar4WD::blinkLed</a></div><div class="ttdeci">void blinkLed(int iDelay)</div><div class="ttdoc">Fait clignoter la LED de test.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:319</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a823ef9bf9b7ea016f7ba9f000c055e15"><div class="ttname"><a href="classRaSmartCar4WD.html#a823ef9bf9b7ea016f7ba9f000c055e15">RaSmartCar4WD::getMiddleTrack</a></div><div class="ttdeci">int getMiddleTrack()</div><div class="ttdoc">Récupère la valeur du capteur du milieu de suivi de ligne.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:370</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a920e44e1fbd7e64d28dde4b272467117"><div class="ttname"><a href="classRaSmartCar4WD.html#a920e44e1fbd7e64d28dde4b272467117">RaSmartCar4WD::turnRight</a></div><div class="ttdeci">void turnRight()</div><div class="ttdoc">Actionne les moteurs pour faire tourner la voiture à droite. Utilisez la méthode setSpeed pour régler...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:241</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_a94b0f7c79fbe5549c1faea3ba6e0f05d"><div class="ttname"><a href="classRaSmartCar4WD.html#a94b0f7c79fbe5549c1faea3ba6e0f05d">RaSmartCar4WD::turnLeft</a></div><div class="ttdeci">void turnLeft()</div><div class="ttdoc">Actionne les moteurs pour faire tourner la voiture à gauche. Utilisez la méthode setSpeed pour régler...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:200</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_aba2959037c1318dd4c950b510eecaf34"><div class="ttname"><a href="classRaSmartCar4WD.html#aba2959037c1318dd4c950b510eecaf34">RaSmartCar4WD::breathLed</a></div><div class="ttdeci">void breathLed()</div><div class="ttdoc">Fait clignoter la LED de test en faisant varier son éclairage progressivement.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:339</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_ace7b48eff38d0562f298c7f621ba62ef"><div class="ttname"><a href="classRaSmartCar4WD.html#ace7b48eff38d0562f298c7f621ba62ef">RaSmartCar4WD::setDebug</a></div><div class="ttdeci">void setDebug(bool dbg)</div><div class="ttdoc">Active/désactive le mode debug.</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:62</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_ad1239424a6bc168d836880fee7f2a917"><div class="ttname"><a href="classRaSmartCar4WD.html#ad1239424a6bc168d836880fee7f2a917">RaSmartCar4WD::RaSmartCar4WD</a></div><div class="ttdeci">RaSmartCar4WD()</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:6</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_ad8a550f53ac0b02d6c3d6e6b1db27f04"><div class="ttname"><a href="classRaSmartCar4WD.html#ad8a550f53ac0b02d6c3d6e6b1db27f04">RaSmartCar4WD::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Arrête les moteurs de la voiture. Si la propriété showSymbols=true, la matrice de LED affiche un symb...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:281</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_adc0aa82d32398523deca70edd5c7e0ee"><div class="ttname"><a href="classRaSmartCar4WD.html#adc0aa82d32398523deca70edd5c7e0ee">RaSmartCar4WD::setDistanceUnit</a></div><div class="ttdeci">void setDistanceUnit(int unit)</div><div class="ttdoc">Définit l'unité de mesure utilisée pour la distance détectée par le capteur ultrason....</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:416</div></div>
+<div class="ttc" id="aclassRaSmartCar4WD_html_ade0199d73c39615c71779ade26fd2826"><div class="ttname"><a href="classRaSmartCar4WD.html#ade0199d73c39615c71779ade26fd2826">RaSmartCar4WD::calibrateServo</a></div><div class="ttdeci">void calibrateServo()</div><div class="ttdoc">Fixe l'angle du servomoteur à 90°, de sorte à fixer la tête de la voiture correctement et définitivem...</div><div class="ttdef"><b>Definition:</b> RaSmartCar4WD.cpp:298</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
